@@ -21,7 +21,7 @@ const AboutTicket = ({ticket}) => {
             </header>
             <section className='about-ticket'>
                 <h4 className='about-ticket__hat'>Owner</h4>
-                <div>
+                <div className="about-ticket_main-content">
                     <img className='ticket-icon' src={ticket.owner.avatar}></img>
                     <div>
                         <p><span>{ticket.owner.firstName}</span><span>{ticket.owner.lastName}</span></p>
@@ -31,7 +31,7 @@ const AboutTicket = ({ticket}) => {
             </section>
             <section className='about-ticket'>
                 <h4 className='about-ticket__hat'>Details</h4>
-                <div>
+                <div className="about-ticket_main-content">
                     <div>
                         <p>Reported</p>
                         <p>{ticket.reportedTime}</p>
@@ -49,7 +49,7 @@ const AboutTicket = ({ticket}) => {
             </section>
             <section className='about-ticket'>
                 <h4 className='about-ticket__hat'>Asset</h4>
-                <div>
+                <div className="about-ticket_main-content">
                     <div>
                         <p>Name</p>
                         <p>{ticket.asset.name}</p>
