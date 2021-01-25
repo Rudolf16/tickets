@@ -1,13 +1,63 @@
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #030303d7;
+  color: #d4d2d2ba;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.tickets-logo{
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.purple-line{
+  padding: 2px;
+  background-color: #7833bdfc;
+}
+.search-field{
+  padding:10px;
+  border: 1px solid #0303036b;
+  background-color: inherit;
+  color: white;
+}
+.main-content{
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  margin-top: 10px;
+}
+.tickets-navigate{
+  width: 25%;
+}
+.search-field{
+  width: 100%;
+}
+.tickets-list{
+  padding: 15px;
+  background-color:#0303036b ;
+}
+.ticket{
+  list-style: none;
+  border-top: 0.5px solid black;
+}
+.ticket-page{
+  background-color: #03030336;
+    width: 100%;
+    padding: 20px;
+    margin-left: 20px;
+}
+.about-ticket{
+  border: 1px solid #0303036b;
+  margin-bottom: 20px;
+}
+.about-ticket__hat{
+  background-color: #0303036b;
+    margin-top: 0;
+    padding: 10px;
+}
+.ticket-icon{
+  width: 50px;
+  border-radius: 50%;
 }
