@@ -7,7 +7,6 @@ type Props ={
 
 export const UserTicket:React.FC<Props>=({ticket}) => {
     const date=new Date(ticket.reportedTime).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});
-    console.log(date)
     return (
         <Link to={'/'+ticket.ticketId} >
             <li className='ticket-list_item' id={String(ticket.ticketId)}>

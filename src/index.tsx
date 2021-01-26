@@ -16,8 +16,8 @@ const getTest=async()=>{
   return dataRemaded;
 }
 getTest().then(res=>{
-  const reducer=(state:Ticket[]=[...res])=>{
-    return state
+  const reducer=(tickets:Ticket[]=[...res])=>{
+    return tickets;
 
   }
   const state=createStore(reducer);

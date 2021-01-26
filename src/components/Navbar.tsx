@@ -1,19 +1,20 @@
 import React,{useState,useEffect} from 'react'
-import {connect} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {UserTicket}  from './Userticket'
 import {Ticket} from "../ts/ticket"
-type Props={
-    tickets:Ticket[]
-}
 
 
-const Navbar:React.FC<Props>=({tickets})=>{
-    const[currentTickets,setCurrentTickets]=useState(tickets);
-    const[seacrhTickets,setSeacrhTickets]=useState(tickets);
-    const[ticketName,setTicketName]=useState('')
+
+const Navbar=()=>{
+    const state = useSelector((state:Ticket[])=>state)
+    
+    
+    const[currentTickets,setCurrentTickets]=useState(state);
+    const[seacrhTickets,setSeacrhTickets]=useState(state);
+    const[ticketName,setTicketName]=useState<string>('')
 
     useEffect(()=>{
-        setSeacrhTickets(currentTickets.filter(el=>el.asset.name.toLowerCase().includes(ticketName.trim().toLowerCase())))
+        setSeacrhTickets(currentTickets.filter((el)=>el.asset.name.toLowerCase().includes(ticketName.trim().toLowerCase())))
 
     },[currentTickets,ticketName])
 
@@ -30,9 +31,4 @@ const Navbar:React.FC<Props>=({tickets})=>{
              
 }
 
-const mapStateToProps=(state:Ticket[])=>{
-    return{tickets:state};
-  
-  }
-  
-export default connect(mapStateToProps)(Navbar);
+export default Navbar
