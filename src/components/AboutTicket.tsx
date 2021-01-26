@@ -1,7 +1,19 @@
 import React ,{useEffect} from 'react'
 import {connect} from 'react-redux'
+import {Ticket} from "../ts/ticket"
+type Props={
+    ticket:Ticket
+}
+interface Params{
+    match:{params:{
+        id:number
+    }}
+}
 
-const AboutTicket = ({ticket}) => {
+const AboutTicket:React.FC<Props>= ({ticket}) => {
+    const date=new Date(ticket.lastUpdatedTime).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});
+    const date_2=new Date(ticket.reportedTime).toLocaleTimeString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'});
+    
     console.log(ticket)
     useEffect(() => {
         console.log(ticket)
@@ -16,7 +28,7 @@ const AboutTicket = ({ticket}) => {
                 </div>
                 <div>
                     <span>Last update </span>
-                    <span>{ticket.lastUpdatedTime}</span>
+                    <span>{date}</span>
                 </div>
             </header>
             <section className='about-ticket'>
@@ -34,7 +46,7 @@ const AboutTicket = ({ticket}) => {
                 <div className="about-ticket_main-content">
                     <div>
                         <p>Reported</p>
-                        <p>{ticket.reportedTime}</p>
+                        <p>{date_2}</p>
                     </div>
                     <div>
                         <p>Status</p>
@@ -70,7 +82,7 @@ const AboutTicket = ({ticket}) => {
     )
 }
 
-const mapStateToProps=(state,oldstate)=>{
+const mapStateToProps=(state:Ticket[],oldstate:Params)=>{
     let id=state.find(ticket=>ticket.ticketId==oldstate.match.params.id)
     return{ticket:id};
   

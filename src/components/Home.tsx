@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-export const Home = () => {
+
+export const Home:React.FC = () => {
     return (
         <div>
             <h1>Tickets</h1>

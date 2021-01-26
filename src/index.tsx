@@ -6,14 +6,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import {Ticket} from "./ts/ticket"
 
-const startTest=async()=>{
+
+
+const getTest=async()=>{
   const testData=await fetch('https://raw.githubusercontent.com/Tapify/public-code-test/master/web-ui-test/tickets.json');
   const dataRemaded=await testData.json();
   return dataRemaded;
 }
-startTest().then(res=>{
-  const reducer=(state=[...res])=>{
+getTest().then(res=>{
+  const reducer=(state:Ticket[]=[...res])=>{
     return state
 
   }

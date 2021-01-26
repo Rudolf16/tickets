@@ -1,9 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import {connect} from 'react-redux'
-import { UserTicket } from './Userticket'
+import {UserTicket}  from './Userticket'
+import {Ticket} from "../ts/ticket"
+type Props={
+    tickets:Ticket[]
+}
 
 
-const Navbar=({tickets})=>{
+const Navbar:React.FC<Props>=({tickets})=>{
     const[currentTickets,setCurrentTickets]=useState(tickets);
     const[seacrhTickets,setSeacrhTickets]=useState(tickets);
     const[ticketName,setTicketName]=useState('')
@@ -26,7 +30,7 @@ const Navbar=({tickets})=>{
              
 }
 
-const mapStateToProps=(state)=>{
+const mapStateToProps=(state:Ticket[])=>{
     return{tickets:state};
   
   }
